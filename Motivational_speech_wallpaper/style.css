@@ -1,0 +1,38 @@
+.image{
+  height: 300px;
+  width: 400px;
+}
+
+.position{
+  position: relative;
+}
+
+.top{
+  position: absolute;
+  top: 20px;
+}
+
+.center-vertical{
+  position: absolute;
+  top: 100px;
+}
+
+.bottom{
+  position: absolute;
+  top: 180px;
+}
+
+.left{
+  position: absolute;
+  left: 40px;
+}
+
+.center-horizontal{
+  position: absolute;
+  left: 160px;
+}
+
+.right{
+  position: absolute;
+  left: 2600px;
+}
