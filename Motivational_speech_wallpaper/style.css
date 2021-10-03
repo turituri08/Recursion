@@ -1,10 +1,14 @@
 .image{
   height: 300px;
-  width: 400px;
+  width: 500px;
 }
 
 .position{
   position: relative;
+}
+
+.text-width{
+  width: 50%;
 }
 
 .top{
@@ -14,12 +18,12 @@
 
 .center-vertical{
   position: absolute;
-  top: 100px;
+  top: 25%;
 }
 
 .bottom{
   position: absolute;
-  top: 180px;
+  top: 160px;
 }
 
 .left{
@@ -29,10 +33,10 @@
 
 .center-horizontal{
   position: absolute;
-  left: 160px;
+  left: 25%;
 }
 
 .right{
   position: absolute;
-  left: 2600px;
+  left: 240px;
 }
