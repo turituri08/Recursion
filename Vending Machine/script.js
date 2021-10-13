@@ -1,55 +1,31 @@
-const target = document.getElementById("imageTarget");
+const targetImage = document.getElementById("targetImage");
+const sliderImage = targetImage.querySelectorAll(".sliderImage");
 
-// const sliderImage = document.querySelectorAll(".card-img-top");
-// const sliderName = document.querySelectorAll(".card-title");
-// const sliderPrice = document.querySelectorAll(".card-text");
-
-// console.log(sliderImage);
-// console.log(sliderName);
-// console.log(sliderPrice);
-
-const sliderAnimal = document.querySelectorAll(".animalCard");
-
-console.log(sliderAnimal);
+const targetBtn = document.getElementById("targetBtn");
+const btns = targetBtn.querySelectorAll(".btn");
 
 let sliderShow = document.createElement("div");
 let main = document.createElement("div");
 let extra = document.createElement("div");
 
-sliderShow.classList.add("col-12", "d-flex", "flex-nowrap", "overflow-hiddens");
+// 画像を表示する部分のクラス
+sliderShow.classList.add("col-8","d-block", "mx-auto");
+// mainが出現する画像、extraが消えていく画像
 main.classList.add("main");
 extra.classList.add("extra");
 
-main.append(sliderAnimal[0]);
+main.append(sliderImage[0]);
 
 sliderShow.append(main);
 sliderShow.append(extra);
-target.append(sliderShow);
+targetImage.append(sliderShow);
 
-main.setAttribute("data-index", "0");
-
-
-
-function slide(value){
-  let index = parseInt(main.getAttribute("data-index"));
-  let currentElement = sliderAnimal.item(index);
-
-  index = value;
-
-  let nextElement = sliderAnimal.item(index);
-
-  main.setAttribute("data-index", index.toString());
-
-  animateMain(currentElement, nextElement);
+for(let i = 0; i < btns.length; i++){
+  btns[i].addEventListener("click", function(){
+    alert("クリックされました");
+  });
 }
 
-function animateMain(currentElement, nextElement) {
-  main.innerHTML = "";
-  main.append(nextElement);
+function slide(value){
   
-  extra.innerHTML = "";
-  extra.append(currentElement);
-
-  main.classList.add("expand-animation");
-  extra.classList.add("deplete-animation");
 }
