@@ -1,5 +1,5 @@
 const targetImage = document.getElementById("targetImage");
-const sliderImage = targetImage.querySelectorAll(".sliderImage");
+const sliderImages = targetImage.querySelectorAll(".sliderImage");
 
 const targetBtn = document.getElementById("targetBtn");
 const btns = targetBtn.querySelectorAll(".btn");
@@ -14,18 +14,52 @@ sliderShow.classList.add("col-8","d-block", "mx-auto");
 main.classList.add("main");
 extra.classList.add("extra");
 
-main.append(sliderImage[0]);
+main.append(sliderImages[0]);
 
 sliderShow.append(main);
 sliderShow.append(extra);
 targetImage.append(sliderShow);
 
+main.setAttribute("image-index", "0");
+
+// 全てのボタンぼクリックに対応 for文で回すとどのボタンをクリックしても反応するようにできる。
 for(let i = 0; i < btns.length; i++){
   btns[i].addEventListener("click", function(){
-    alert("クリックされました");
+    // もしクリックされた画像のボタンが現在の画像と同じなら何もしない。
+    if(parseInt(main.getAttribute("image-index")) == i) return;
+    // 画像をスライドさせて、現在の画像(main)のimage-index属性をクリックされた画像にする。
+    slide(i);
+    main.setAttribute("image-index", i)
   });
 }
 
 function slide(value){
+  let index = parseInt(main.getAttribute("image-index"));
   
+  let currentElement = sliderImages.item(index);
+
+  index = value;
+  console.log(index);
+
+  let nextElement = sliderImages.item(index);
+
+  console.log(currentElement);
+  console.log(nextElement);
+
+  animateMain(currentElement, nextElement);
+}
+
+function animateMain(currentElement, nextElement) {
+  main.innerHTML = "";
+  main.append(nextElement);
+  
+  extra.innerHTML = "";
+  extra.append(currentElement);
+
+  main.classList.add("expand-animation");
+  extra.classList.add("deplete-animation");
+  
+  sliderShow.innerHTML = "";
+  sliderShow.append(extra);
+  sliderShow.append(main);
 }
