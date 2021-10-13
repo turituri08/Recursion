@@ -8,25 +8,64 @@
   <body>
     <div class="container mt-5">
       
-      <div class="col-12 d-flex justify-content-center" id="imageTarget">
-        <div class="card" style="width: 25rem;">
-          <img class="card-img-top" src="https://cdn.pixabay.com/photo/2015/12/18/13/46/tiger-1098607__340.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title" id="name">Name: Tiger</h5>
-            <h5 class="card-text" id = "price">Price: 100$</p>
-          </div>
-        </div>     
+      <div class="slider-data d-none" id="imageTarget">
+        <!-- <img class="col-10" src="https://cdn.pixabay.com/photo/2015/12/18/13/46/tiger-1098607__340.jpg">
+        <img class="col-10" src="https://cdn.pixabay.com/photo/2019/07/27/06/21/giraffe-4366005__340.jpg">
+        <img class="col-10" src="https://cdn.pixabay.com/photo/2018/09/22/17/05/parrot-3695678__340.jpg">
+        <img class="col-10" src="https://cdn.pixabay.com/photo/2016/04/17/16/37/frog-1335022__340.jpg"> -->
+
+        <div class="animalCard col-12 d-flex justify-content-center deplete-animation">
+          <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="https://cdn.pixabay.com/photo/2015/12/18/13/46/tiger-1098607__340.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" id="name">Name: Tiger</h5>
+              <h5 class="card-text" id = "price">Price: 100$</p>
+            </div>
+          </div>     
+        </div>
+
+        <div class="animalCard col-12 d-flex justify-content-center expand-animation">
+          <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="https://cdn.pixabay.com/photo/2019/07/27/06/21/giraffe-4366005__340.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" id="name">Name: Giraffe</h5>
+              <h5 class="card-text" id = "price">Price: 150$</p>
+            </div>
+          </div>     
+        </div>
+
+        <div class="animalCard col-12 d-flex justify-content-center">
+          <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="https://cdn.pixabay.com/photo/2018/09/22/17/05/parrot-3695678__340.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" id="name">Name: Parrot</h5>
+              <h5 class="card-text" id = "price">Price: 30$</p>
+            </div>
+          </div>     
+        </div>
+
+        <div class="animalCard col-12 d-flex justify-content-center">
+          <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="https://cdn.pixabay.com/photo/2016/04/17/16/37/frog-1335022__340.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" id="name">Name: Frog</h5>
+              <h5 class="card-text" id = "price">Price: 5$</p>
+            </div>
+          </div>     
+        </div>
+
+      </div>
+    
+      <div class="text-center mt-5" id="target-btn">
+        <div class="target-btn">
+          <div class="col-3 btn btn-secondary mt-3">1</div>
+          <div class="col-3 btn btn-secondary mt-3">2</div>
+          <div class="col-3 btn btn-secondary mt-3">3</div>
+          <div class="col-3 btn btn-secondary mt-3">4</div>
+
+        </div>
       </div>
 
-      <div class="target-btn text-center mt-5" id="target-btn">
-        <div class="col-3 btn btn-secondary mt-3">1</div>
-        <div class="col-3 btn btn-secondary mt-3">2</div>
-        <div class="col-3 btn btn-secondary mt-3">3</div>
-        <div class="col-3 btn btn-secondary mt-3">4</div>
-        <div class="col-3 btn btn-secondary mt-3">5</div>
-        <div class="col-3 btn btn-secondary mt-3">6</div>
-      </div>
-      
     </div>
 
     <script src="script.js"></script>
