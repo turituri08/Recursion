@@ -21,6 +21,7 @@ sliderShow.append(extra);
 targetImage.append(sliderShow);
 
 main.setAttribute("image-index", "0");
+setAnimalNameAndPrice(sliderImages[0]);
 
 // 全てのボタンぼクリックに対応 for文で回すとどのボタンをクリックしても反応するようにできる。
 for(let i = 0; i < btns.length; i++){
@@ -39,12 +40,10 @@ function slide(value){
   let currentElement = sliderImages.item(index);
 
   index = value;
-  console.log(index);
 
   let nextElement = sliderImages.item(index);
 
-  console.log(currentElement);
-  console.log(nextElement);
+  setAnimalNameAndPrice(nextElement);
 
   animateMain(currentElement, nextElement);
 }
@@ -62,4 +61,17 @@ function animateMain(currentElement, nextElement) {
   sliderShow.innerHTML = "";
   sliderShow.append(extra);
   sliderShow.append(main);
+}
+
+function setAnimalNameAndPrice(animal){
+  // 画像のdata-name, data-priceを取得し、span要素のidにinnerHTMLで入れている。
+
+  let animalName = animal.getAttribute("data-name");
+  let animalPrice = animal.getAttribute("data-price");
+
+  let name = document.getElementById("name");
+  let price = document.getElementById("price");
+
+  name.innerHTML = animalName;
+  price.innerHTML = animalPrice;
 }
